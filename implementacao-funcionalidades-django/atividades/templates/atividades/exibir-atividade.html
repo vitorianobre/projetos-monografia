@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+
+    <style>
+        .link-voltar {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+
+        body {
+            padding: 20px 30px;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'lista_atividades' %}" class="link-voltar">Voltar</a>
+
+    <h1>Ação: {{ atividade.acao_extensao }}</h1>
+    <p>Tipo: {{ atividade.tipo|default:"-" }}</p>
+    <p>Carga horária: {{ atividade.horas }}h</p>
+    <p>Data de submissão: {{ atividade.data_submissao|date:"d/m/Y" }}</p>
+    <p>Situação: {{ atividade.situacao }}</p>
+    <p>Data de aprovação: {{ atividade.data_aprovacao|date:"d/m/Y"|default:"-" }}</p>
+
+    {% if atividade.anexo %}
+        <p>Anexo: <a href="{{ atividade.anexo.url }}" download>Baixar anexo</a></p>
+    {% endif %}
+</body>
+</html>
