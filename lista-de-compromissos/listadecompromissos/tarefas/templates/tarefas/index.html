@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compromissos</title>
+    
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'tarefas/style.css' %}">
+</head>
+<body>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name='conteudo'>
+        <button type="submit">Enviar</button>
+    </form>
+    
+    {% for tarefa in tarefa %}
+        <p>{{tarefa.conteudo}}</p>
+        <p><a href="{% url 'editar_tarefa' tarefa.id %}">Editar</a></p>
+        <p><a href="{% url 'delete' tarefa.id %}">Excluir</a></p>
+        <p>{{tarefa.criado}}</p>
+        <hr/>
+    {% endfor %}
+
+</body>
+</html>
