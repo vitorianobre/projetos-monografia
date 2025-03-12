@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar atividade</title>
+
+    <style>
+        #container-tipo-curso, #container-tipo-evento {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nova atividade</h1>
+        <a href="/">Minhas Atividades</a>
+    </header>
+
+    <%= form_with model: @atividade, url: cadastrar_path, local: true, html: { enctype: "multipart/form-data" } do |f| %>
+        <div id="container-acao-extensao">
+            <%= f.label :acao_extensao, "Selecione a ação de extensão:" %>
+            <%= f.select :acao_extensao, ['Programa', 'Projeto', 'Curso', 'Evento'], { prompt: 'Selecione' }, required: true %>
+        </div>
+
+        <div id="container-tipo-curso" style="display:none;">
+            <%= f.label :tipo_curso, "Selecione o tipo:" %>
+            <%= f.select :tipo_curso, ['Formação inicial', 'Formação continuada'], prompt: 'Selecione' %>
+        </div>
+
+        <div id="container-tipo-evento" style="display:none;">
+            <%= f.label :tipo_evento, "Selecione o tipo:" %>
+            <%= f.select :tipo_evento, ['Congresso', 'Seminário', 'Encontro', 'Simpósio'], prompt: 'Selecione' %>
+        </div>
+
+        <div id="container-horas">
+            <%= f.label :horas, "Horas pleiteadas:" %>
+            <%= f.number_field :horas, required: true %>
+        </div>
+
+        <div id="container-anexos">
+            <label for="anexo">Anexos:</label>
+            <%= f.file_field :anexo, accept: ".pdf", required: true %>
+        </div>
+
+        <%= f.submit "Adicionar atividade" %>
+    <% end %>
+
+
+    <script>
+        const acaoExtensao = document.getElementById('atividade_acao_extensao');
+        const containerTipoCurso = document.getElementById('container-tipo-curso');
+        const containerTipoEvento = document.getElementById('container-tipo-evento');
+    
+        acaoExtensao.addEventListener('change', ()=>{
+            if(acaoExtensao.value === 'Curso') {
+                containerTipoCurso.style.display = 'block';
+            } else {
+                containerTipoCurso.style.display = 'none';
+            }
+        })
+
+        acaoExtensao.addEventListener('change', ()=>{
+            if(acaoExtensao.value === 'Evento') {
+                containerTipoEvento.style.display = 'block';
+            } else {
+                containerTipoEvento.style.display = 'none';
+            }
+        })
+
+        const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+        const fileInput = document.getElementById('anexo');
+
+        fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0];
+            if (file && file.size > MAX_FILE_SIZE) {
+                alert('O arquivo deve ter no máximo 5MB.');
+                fileInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
+

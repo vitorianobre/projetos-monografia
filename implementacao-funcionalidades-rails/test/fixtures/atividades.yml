@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  acao_extensao: MyString
+  tipo: MyString
+  data_submissao: 2024-09-14
+  horas: 1
+  situacao: MyString
+
+two:
+  acao_extensao: MyString
+  tipo: MyString
+  data_submissao: 2024-09-14
+  horas: 1
+  situacao: MyString
