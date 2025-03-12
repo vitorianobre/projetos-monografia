@@ -1,24 +1,17 @@
-# README
+# 📝 Blog - Ruby on Rails  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este é um projeto de blog desenvolvido com Ruby on Rails. Ele permite a criação, edição e exclusão de posts de um blog.  
 
-Things you may want to cover:
+## 🚀 Tecnologias Utilizadas  
 
-* Ruby version
+- Ruby on Rails  
+- SQLite 
 
-* System dependencies
+## ⚙️ Como Executar  
 
-* Configuration
+1. Clone o repositório: 
+   git clone https://github.com/vitorianobre/projetos-monografia.git
+   cd blog
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+2. Executar servidor: 
+   ruby bin\rails server

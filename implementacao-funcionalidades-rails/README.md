@@ -1,24 +1,17 @@
-# README
+# 📝 Implementação das funcionalidades - Ruby on Rails  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este é um projeto de implementação das funcionalidades "Cadastrar" e "Submeter" do software projetado. Ele permite cadastrar o comprovante de participação em uma atividade de extensão.
 
-Things you may want to cover:
+## 🚀 Tecnologias Utilizadas  
 
-* Ruby version
+- Ruby on Rails  
+- SQLite 
 
-* System dependencies
+## ⚙️ Como Executar  
 
-* Configuration
+1. Clone o repositório: 
+   git clone https://github.com/vitorianobre/projetos-monografia.git
+   cd implementacao-funcionalidades-rails
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+2. Executar servidor: 
+   ruby bin\rails server
