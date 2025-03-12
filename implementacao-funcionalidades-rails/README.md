@@ -10,8 +10,10 @@ Este é um projeto de implementação das funcionalidades "Cadastrar" e "Submete
 ## ⚙️ Como Executar  
 
 1. Clone o repositório: 
+   ```sh
    git clone https://github.com/vitorianobre/projetos-monografia.git
    cd implementacao-funcionalidades-rails
 
 2. Executar servidor: 
+   ```sh
    ruby bin\rails server

@@ -10,8 +10,10 @@ Este é um projeto de gerenciamento de contatos desenvolvido com Laravel. Ele pe
 ## ⚙️ Como Executar  
 
 1. Clone o repositório: 
+    ```sh
    git clone https://github.com/vitorianobre/projetos-monografia.git
    cd gerenciamento-de-contatos
 
 2. Executar servidor: 
+    ```sh
    php artisan serve

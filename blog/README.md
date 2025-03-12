@@ -10,8 +10,10 @@ Este é um projeto de blog desenvolvido com Ruby on Rails. Ele permite a criaç�
 ## ⚙️ Como Executar  
 
 1. Clone o repositório: 
+   ```sh
    git clone https://github.com/vitorianobre/projetos-monografia.git
    cd blog
 
 2. Executar servidor: 
+   ```sh
    ruby bin\rails server

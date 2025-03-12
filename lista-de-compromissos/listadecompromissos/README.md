@@ -9,9 +9,11 @@ Este é um projeto de lista de compromissos desenvolvido com Django. Ele permite
 
 ## ⚙️ Como Executar  
 
-1. Clone o repositório: 
+1. Clone o repositório:
+   ```sh
    git clone https://github.com/vitorianobre/projetos-monografia.git
    cd lista-de-compromissos/listadecompromissos
 
 2. Executar servidor: 
+   ```sh
    python manage.py runserver
